@@ -6,6 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
+
 <style>
 		.failed {
 			color: red;
@@ -16,7 +21,7 @@
 
 <h2>Custom Login</h2>
 
-<form:form  action="${pageContext.request.contextPath}/authenticateUser"  method="post">
+<form:form   class="form-control" action="${pageContext.request.contextPath}/authenticateUser"  method="post">
 		
 		
 		<c:if test="${param.error != null}">
@@ -25,11 +30,11 @@
 			
 		</c:if>
 		<p>
-			User name: <input type="text" name="username" />
+			User name: <input type="text" name="username"  class="form-control"/>
 		</p>
 
 		<p>
-			Password: <input type="password" name="password" />
+			Password: <input type="password" name="password"  class="form-control"/>
 		</p>
 		
 		<input type="submit" value="Login" />

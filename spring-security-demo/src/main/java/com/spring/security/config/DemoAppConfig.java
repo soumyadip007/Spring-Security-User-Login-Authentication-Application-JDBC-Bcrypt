@@ -22,7 +22,7 @@ public class DemoAppConfig {
 	obj.setPrefix("/WEB-INF/view/");
 	obj.setSuffix(".jsp");
 	
-	
+
 	return obj;
 	}
 }
