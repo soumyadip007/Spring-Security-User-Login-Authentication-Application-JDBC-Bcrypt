@@ -7,6 +7,9 @@
 <title>Spring Security Home</title>
 </head>
 <body>
+
+<h2>Welcome to Spring Security</h2>
+
 Hello
 </body>
 </html>
