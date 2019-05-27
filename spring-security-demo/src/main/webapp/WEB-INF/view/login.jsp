@@ -6,10 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css">
 	
-    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 
 <style>
 		.failed {
@@ -37,7 +37,7 @@
 			Password: <input type="password" name="password"  class="form-control"/>
 		</p>
 		
-		<input type="submit" value="Login" />
+		<input type="submit" class="form-control" value="Login" />
  
 </form:form>
 
