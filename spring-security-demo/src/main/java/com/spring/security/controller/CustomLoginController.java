@@ -10,6 +10,9 @@ public class CustomLoginController {
 	@GetMapping("/showMyLoginPage")
 	public String showHome()
 	{
-		return "login";
+	//	return "login";
+		return "fancylogin";
 	}
+	
+	
 }
