@@ -26,6 +26,7 @@
 <div class="container">
   <div class="row"> 
    <div class="col-sm">
+   ${message}
 <form:form   action="${pageContext.request.contextPath}/authenticateTheUser"  method="POST">
 		
 		
@@ -34,11 +35,12 @@
 			<i class="failed">Sorry! You entered invalid username/password.</i>
 			
 		</c:if>
+		${message}
+		<i class="success">${message}</i>
 		
 		<c:if test="${param.logout != null}">
 		
 			<i class="success">You have successfully logged out.</i>
-			
 		</c:if>
 		<p>
 			User name: <input type="text" name="username"  class="form-control"/>

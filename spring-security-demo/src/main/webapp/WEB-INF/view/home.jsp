@@ -18,7 +18,7 @@
 <h2>Welcome to Spring Security</h2>
 
 Hello
-<form:form   action="${pageContext.request.contextPath}/Logout"  method="POST">
+<form:form   action="${pageContext.request.contextPath}/logout"  method="POST">
 		
 			<button type="submit" class="btn btn-success">Logout</button>
 </form:form>
