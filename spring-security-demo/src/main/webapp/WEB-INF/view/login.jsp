@@ -6,6 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
+<style>
+		.failed {
+			color: red;
+		}
+	</style>
 </head>
 <body>
 
@@ -13,6 +18,12 @@
 
 <form:form  action="${pageContext.request.contextPath}/authenticateUser"  method="post">
 		
+		
+		<c:if test="${param.error != null}">
+		
+			<i class="failed">Sorry! You entered invalid username/password.</i>
+			
+		</c:if>
 		<p>
 			User name: <input type="text" name="username" />
 		</p>
