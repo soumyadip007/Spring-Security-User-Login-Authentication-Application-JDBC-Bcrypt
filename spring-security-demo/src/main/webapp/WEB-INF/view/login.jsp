@@ -34,8 +34,6 @@
 			<i class="failed">Sorry! You entered invalid username/password.</i>
 			
 		</c:if>
-		${message}
-		<i class="success">${message}</i>
 		
 		<c:if test="${param.logout != null}">
 		
