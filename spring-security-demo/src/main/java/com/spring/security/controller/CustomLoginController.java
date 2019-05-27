@@ -11,7 +11,6 @@ public class CustomLoginController {
 	@GetMapping("/showMyLoginPage")
 	public String showHome()
 	{
-		
 		return "login";
 	//	return "fancylogin";
 	}
@@ -19,10 +18,10 @@ public class CustomLoginController {
 	@GetMapping("/customLogout")
 	public String customLogout(Model obj)
 	{
-
+	
 		obj.addAttribute("message","You have successfully logged out!=");
 		
-		return "redirect:/showMyLoginPage"; 
+		return "login"; 
 	}
 	
 	
