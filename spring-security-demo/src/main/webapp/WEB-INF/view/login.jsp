@@ -7,10 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
-   <link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.css"/>" >
-   <link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>" type="text/css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css">
 	
-    <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
 
 <style>
 		.failed {
@@ -26,7 +26,7 @@
 <div class="container">
   <div class="row"> 
    <div class="col-sm">
-<form:form   action="${pageContext.request.contextPath}/authenticateUser"  method="post">
+<form:form   action="authenticateTheUser"  method="POST">
 		
 		
 		<c:if test="${param.error != null}">
@@ -41,8 +41,7 @@
 		<p>
 			Password: <input type="password" name="password"  class="form-control"/>
 		</p>
-		
-		<input type="submit" value="Login" />
+			<button type="submit" class="btn btn-success">Login</button>
 </form:form>
 
 </div>

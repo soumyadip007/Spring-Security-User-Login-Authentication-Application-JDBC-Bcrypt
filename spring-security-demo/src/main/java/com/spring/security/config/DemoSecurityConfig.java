@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @EnableWebSecurity		//Replacement of spring-mvc-demo.xml
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
