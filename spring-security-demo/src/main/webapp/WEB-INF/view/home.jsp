@@ -25,14 +25,19 @@ Hello
  
  Role: <security:authentication property="principal.authorities" />
 </p>
-
+<security:authorize access="hasRole('MANAGERS')">
 <p>
 <a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>(Only for leaders)
 </p>
+</security:authorize>
 
+
+<security:authorize  access="hasRole('ADMIN')">
 <p>
 <a href="${pageContext.request.contextPath}/system">System admin</a>(Only for admin)
 </p>
+</security:authorize>
+
 <form:form   action="${pageContext.request.contextPath}/logout"  method="POST">
 		
 			<button type="submit" class="btn btn-success">Logout</button>

@@ -25,5 +25,12 @@ public class CustomLoginController {
 		return "login"; 
 	}
 	
+
+	@GetMapping("/accessDenied")
+	public String accessDenied()
+	{
+
+		return "accessDenied"; 
+	}
 	
 }
