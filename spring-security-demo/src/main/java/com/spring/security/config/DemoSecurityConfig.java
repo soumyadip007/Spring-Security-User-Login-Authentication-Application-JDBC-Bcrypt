@@ -33,7 +33,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 		
 		http.authorizeRequests()
-		.antMatchers("/**").hasAuthority("Admin").anyRequest().authenticated()
+		.antMatchers("/**").hasAuthority("ADMIN").anyRequest().authenticated()
 			.and()
 			.formLogin()
 			.loginPage("/showMyLoginPage")

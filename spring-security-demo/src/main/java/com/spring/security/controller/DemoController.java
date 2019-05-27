@@ -17,7 +17,6 @@ public class DemoController {
 	public String leaders()
 	{
 		return "leaders";
-	}
 }
 
 
