@@ -27,7 +27,7 @@ Hello
 </p>
 
 <p>
-<a href="${pageContext.request.contextPath}/leaders">Leadership</a>
+<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>(Only for leaders)
 </p>
 
 <form:form   action="${pageContext.request.contextPath}/logout"  method="POST">
