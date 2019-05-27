@@ -21,7 +21,11 @@
 
 <h2>Custom Login</h2>
 
-<form:form   class="form-control" action="${pageContext.request.contextPath}/authenticateUser"  method="post">
+<br>
+<div class="container">
+  <div class="row"> 
+   <div class="col-sm">
+<form:form   action="${pageContext.request.contextPath}/authenticateUser"  method="post">
 		
 		
 		<c:if test="${param.error != null}">
@@ -37,9 +41,9 @@
 			Password: <input type="password" name="password"  class="form-control"/>
 		</p>
 		
-		<input type="submit" class="form-control" value="Login" />
+		<input type="submit" value="Login" />
  
 </form:form>
-
+</div></div></div>
 </body>
 </html>
