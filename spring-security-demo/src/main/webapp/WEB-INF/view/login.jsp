@@ -6,10 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
-   <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" type="text/css">
 	
-    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
 
 <style>
 		.failed {
