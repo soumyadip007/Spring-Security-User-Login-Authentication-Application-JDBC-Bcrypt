@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration          //Replacement of web.xml
 @EnableWebSecurity		//Replacement of spring-mvc-demo.xml
@@ -32,7 +33,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 	
 		
-		http.authorizeRequests()
+	/*	http.authorizeRequests()
 		.antMatchers("/","/leaders").hasAuthority("ADMIN").anyRequest().authenticated()
 			.and()
 			.formLogin()
@@ -40,8 +41,16 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/authenticateTheUser")
 			.permitAll()
 			.and()
-			.logout().permitAll();
+			.logout().permitAll();*/
 		
+		
+		http.
+		authorizeRequests()
+			.antMatchers("/**").hasAuthority("ADMIN").anyRequest()
+			.authenticated().and().formLogin()
+			.loginPage("/showMyLoginPage").permitAll()
+			.and().logout()
+			.logoutSuccessUrl("/login");
 		//logoutSuccessUrl("/customLogout")
 	}
 	
