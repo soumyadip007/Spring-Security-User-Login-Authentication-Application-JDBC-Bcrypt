@@ -23,7 +23,7 @@ Hello
  User: <security:authentication property="principal.username" />
  <br><br>
  
- User: <security:authentication property="principal.authorities" />
+ Role: <security:authentication property="principal.authorities" />
 </p>
 
 <form:form   action="${pageContext.request.contextPath}/logout"  method="POST">

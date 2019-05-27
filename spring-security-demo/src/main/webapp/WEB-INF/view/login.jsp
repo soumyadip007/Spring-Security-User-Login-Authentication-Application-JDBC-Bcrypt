@@ -11,7 +11,6 @@
    <link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>" type="text/css">
 	
     <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
-
 <style>
 		.failed {
 			color: red;
