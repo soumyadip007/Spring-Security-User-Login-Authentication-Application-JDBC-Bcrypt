@@ -15,6 +15,10 @@ public class CustomLoginController {
 	//	return "fancylogin";
 	}
 	
+	
+	
+	
+	
 	@GetMapping("/customLogout")
 	public String customLogout(Model obj)
 	{
