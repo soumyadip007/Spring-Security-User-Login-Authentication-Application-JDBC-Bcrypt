@@ -11,12 +11,9 @@ public class CustomLoginController {
 	@GetMapping("/showMyLoginPage")
 	public String showHome()
 	{
-	//	return "login";
-		return "fancylogin";
+		return "login";
+	//	return "fancylogin";
 	}
-	
-	
-	
 	
 	
 	@GetMapping("/customLogout")

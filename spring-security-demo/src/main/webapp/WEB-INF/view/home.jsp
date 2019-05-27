@@ -26,6 +26,10 @@ Hello
  Role: <security:authentication property="principal.authorities" />
 </p>
 
+<p>
+<a href=""${pageContext.request.contextPath}/leaders>Leadership</a>
+</p>
+
 <form:form   action="${pageContext.request.contextPath}/logout"  method="POST">
 		
 			<button type="submit" class="btn btn-success">Logout</button>
