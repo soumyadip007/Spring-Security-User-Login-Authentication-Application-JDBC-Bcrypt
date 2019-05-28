@@ -23,16 +23,15 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
 
-	//Set up a var to hold the property
-	
 	@Autowired
 	private Environment env;
 	
+	// set up a logger for diagnostics
 	
-	//setup logger for the diagonstic
+	private Logger logger = Logger.getLogger(getClass().getName());
 	
-	private Logger logger=Logger.getLogger(getClass().getName());
 	
+	// define a bean for ViewResolver
 	
 	@Bean
 	public ViewResolver viewResolver() {
@@ -49,53 +48,52 @@ public class DemoAppConfig {
 	return obj;
 	}
 	
-	//Define a bean for our security data source
+	// define a bean for our security datasource
 	
 	@Bean
-	public DataSource securityDataSource()
-	{
-		//create connection pool
-		ComboPooledDataSource securityDS= new ComboPooledDataSource();
+	public DataSource securityDataSource() {
 		
-		//setup jdbc driver class
+		// create connection pool
+		ComboPooledDataSource securityDataSource
+									= new ComboPooledDataSource();
+				
+		// set the jdbc driver class
 		
 		try {
-			securityDS.setDriverClass(env.getProperty("jdbc.driver"));
-			System.out.println("Connecting");
-		} catch (PropertyVetoException e) {
-		
-			
-			e.printStackTrace();
+			securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+		} catch (PropertyVetoException exc) {
+			throw new RuntimeException(exc);
 		}
 		
-		//log the connection props
-		logger.info(">>Jdbc.url="+env.getProperty("jdbc.url"));
-
-		logger.info(">>Jdbc.user="+env.getProperty("jdbc.user"));
-		System.out.println("Connecting 2");
+		// log the connection props
+		// for sanity's sake, log this info
+		// just to make sure we are REALLY reading data from properties file
 		
-		//set db connection props & pools
+		logger.info(">>> jdbc.url=" + env.getProperty("jdbc.url"));
+		logger.info(">>> jdbc.user=" + env.getProperty("jdbc.user"));
 		
 		
-		securityDS.setJdbcUrl(env.getProperty("jdbc.driver"));
-
-		securityDS.setUser(env.getProperty("jdbc.user"));
+		// set database connection props
 		
-		securityDS.setPassword(env.getProperty("jdbc.password"));
+		securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
+		securityDataSource.setUser(env.getProperty("jdbc.user"));
+		securityDataSource.setPassword(env.getProperty("jdbc.password"));
 		
-		securityDS.setInitialPoolSize(
+		// set connection pool props
+		
+		securityDataSource.setInitialPoolSize(
 				getIntProperty("connection.pool.initialPoolSize"));
 
-		securityDS.setMinPoolSize(
+		securityDataSource.setMinPoolSize(
 				getIntProperty("connection.pool.minPoolSize"));
 
-		securityDS.setMaxPoolSize(
+		securityDataSource.setMaxPoolSize(
 				getIntProperty("connection.pool.maxPoolSize"));
 
-		securityDS.setMaxIdleTime(
+		securityDataSource.setMaxIdleTime(
 				getIntProperty("connection.pool.maxIdleTime"));
 		
-		return securityDS;
+		return securityDataSource;
 	}
 	
 	// need a helper method 

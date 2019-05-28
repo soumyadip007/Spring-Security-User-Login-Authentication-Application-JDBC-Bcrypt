@@ -14,10 +14,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity		//Replacement of spring-mvc-demo.xml
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private DataSource securityDB;
-	
 
+	@Autowired
+	private DataSource securityDataSource;
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -34,7 +34,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		//using JDBC Authentication
 		
-		auth.jdbcAuthentication().dataSource(securityDB);
+		auth.jdbcAuthentication().dataSource(securityDataSource);
 	}
 
 	@Override
