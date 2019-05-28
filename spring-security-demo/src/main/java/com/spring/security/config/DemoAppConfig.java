@@ -61,6 +61,7 @@ public class DemoAppConfig {
 		
 		try {
 			securityDS.setDriverClass(env.getProperty("jdbc.driver"));
+			System.out.println("Connecting");
 		} catch (PropertyVetoException e) {
 		
 			
@@ -71,7 +72,7 @@ public class DemoAppConfig {
 		logger.info(">>Jdbc.url="+env.getProperty("jdbc.url"));
 
 		logger.info(">>Jdbc.user="+env.getProperty("jdbc.user"));
-		
+		System.out.println("Connecting 2");
 		
 		//set db connection props & pools
 		
@@ -109,5 +110,4 @@ public class DemoAppConfig {
 		
 		return intPropVal;
 	}
-}
 }
