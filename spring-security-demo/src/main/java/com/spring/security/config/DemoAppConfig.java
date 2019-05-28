@@ -2,6 +2,8 @@ package com.spring.security.config;
 
 import java.util.logging.Logger;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -43,4 +45,26 @@ public class DemoAppConfig {
 
 	return obj;
 	}
+	
+	//Define a bean for our security data source
+	
+	@Bean
+	public DataSource securityDataSource()
+	{
+		//create connection pool
+		
+		
+		//setup jdbc driver class
+		
+		
+		//log the connection props
+		
+		//set db connection props
+		
+		//set up connection pool props
+		
+		
+		return null;
+	}
+	
 }
