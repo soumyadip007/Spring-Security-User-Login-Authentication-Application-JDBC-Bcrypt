@@ -16,14 +16,20 @@ public class CustomLoginController {
 	}
 	
 	
-	@GetMapping("/customLogout")
-	public String customLogout(Model obj)
+	@GetMapping("/authenticateTheUser")
+	public String authenticateTheUser()
 	{
 	
-		obj.addAttribute("message","You have successfully logged out!=");
-		
-		return "login"; 
+		return "fancylogin"; 
 	}
+	
+	@GetMapping("/TheUser")
+	public String TheUser()
+	{
+	
+		return "fancylogin"; 
+	}
+	
 	
 
 	@GetMapping("/accessDenied")

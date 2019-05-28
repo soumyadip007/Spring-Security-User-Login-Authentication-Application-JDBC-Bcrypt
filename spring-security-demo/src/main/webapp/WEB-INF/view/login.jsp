@@ -7,10 +7,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Custom Login</title>
-   <link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.css"/>" >
-   <link rel="stylesheet" href="<c:url value="/resources/bootstrap/css/bootstrap.min.css"/>" type="text/css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" type="text/css">
 	
-    <script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js"/>"></script>
+    <script src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js"></script>
+
+    
 <style>
 		.failed {
 			color: red;
