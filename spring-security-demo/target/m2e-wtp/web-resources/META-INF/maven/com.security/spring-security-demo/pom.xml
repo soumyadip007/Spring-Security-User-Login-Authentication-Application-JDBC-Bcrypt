@@ -17,6 +17,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+
 	<dependencies>
 
 		<!-- Spring MVC support -->
@@ -45,6 +46,23 @@
 		    <artifactId>spring-security-taglibs</artifactId>
 		    <version>${springsecurity.version}</version>
 		</dependency>	
+	
+	
+	<!-- Add mySql and c3p0 support -->
+	
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.6</version>
+		</dependency>	
+		
+		
+			<dependency>
+		    <groupId>com.mchange</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.5.2</version>
+		</dependency>	
+	
 	
 	
 		<!-- Servlet, JSP and JSTL support -->
