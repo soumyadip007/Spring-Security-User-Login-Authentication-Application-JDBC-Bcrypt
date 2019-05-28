@@ -16,13 +16,6 @@ public class CustomLoginController {
 	}
 	
 	
-	@GetMapping("/authenticateTheUser")
-	public String authenticateTheUser()
-	{
-	
-		return "fancylogin"; 
-	}
-	
 	@GetMapping("/TheUser")
 	public String TheUser()
 	{
