@@ -108,4 +108,5 @@ public class DemoAppConfig {
 		
 		return intPropVal;
 	}
+	
 }
