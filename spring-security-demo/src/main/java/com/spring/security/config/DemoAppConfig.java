@@ -1,8 +1,11 @@
 package com.spring.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -10,8 +13,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration			//Replacement of web.xml
 @EnableWebMvc			//Replacement of spring-mvc-demo.xml
 @ComponentScan(basePackages="com.spring.security")
+@PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
 
+	//Set up a var to hold the property
+	
+	@Autowired
+	private Environment env;
+	
 	
 	@Bean
 	public ViewResolver viewResolver() {
