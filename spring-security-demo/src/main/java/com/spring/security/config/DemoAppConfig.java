@@ -1,5 +1,7 @@
 package com.spring.security.config;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,6 +22,11 @@ public class DemoAppConfig {
 	
 	@Autowired
 	private Environment env;
+	
+	
+	//setup logger for the diagonstic
+	
+	private Logger logger=Logger.getLogger(getClass().getName());
 	
 	
 	@Bean
