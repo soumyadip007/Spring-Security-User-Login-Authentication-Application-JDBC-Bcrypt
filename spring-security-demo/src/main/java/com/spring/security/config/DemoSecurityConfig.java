@@ -37,8 +37,15 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		//using JDBC Authentication
 		
-		auth.jdbcAuthentication().dataSource(securityDataSource);
-	}
+		//auth.jdbcAuthentication().dataSource(securityDataSource);
+		
+		 auth.jdbcAuthentication().dataSource(securityDataSource)
+		  .usersByUsernameQuery(
+		   "select username,password, enabled from users where username=?")
+		  .authoritiesByUsernameQuery(
+		   "select username, authority from users where username=?");
+		 } 
+	
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
